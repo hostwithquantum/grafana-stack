@@ -2,13 +2,13 @@ version: '3'
 
 services:
   grafana:
-    image: quay.io/pngmbh/quantum-grafana:latest
+    image: r.planetary-quantum.com/quantum-public/grafana:latest
     deploy:
       labels:
         traefik.enable: "true"
         traefik.docker.network: "public"
         traefik.port: "3000"
-        traefik.frontend.rule: Host:grafana.your-endpoint-or-cluster.docker.planetary-networks.de
+        traefik.frontend.rule: Host:grafana.$QUANTUM_ENDPOINT.customer.planetary-quantum.net
     volumes:
       - grafana-storage:/var/lib/grafana
     networks:
