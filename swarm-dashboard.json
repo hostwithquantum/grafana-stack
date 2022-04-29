@@ -1793,7 +1793,102 @@
         "align": false,
         "alignLevel": null
       }
-    }
+    },
+    {
+      "datasource": "Metrics",
+      "description": "The \"Count\" is not necessarily the number of restarts of that container. But containers appearing here without current deployments should probably be looked into.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisGridShow": false,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 1,
+            "drawStyle": "bars",
+            "fillOpacity": 100,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 3,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 44
+      },
+      "id": 40,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "count"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "sortBy": "Count",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": "Metrics",
+          "exemplar": true,
+          "expr": "count by (container_label_com_docker_swarm_service_name) ((time() - container_start_time_seconds{instance=\"$server\",container_label_com_docker_swarm_service_name=~\".+\"}) < 5*60)",
+          "format": "time_series",
+          "hide": false,
+          "interval": "6m",
+          "intervalFactor": 1,
+          "legendFormat": "{{container_label_com_docker_swarm_service_name}}",
+          "refId": "A",
+          "step": 240
+        }
+      ],
+      "title": "Services started",
+      "type": "timeseries"
+     }
   ],
   "refresh": "",
   "schemaVersion": 30,
