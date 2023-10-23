@@ -1,4 +1,4 @@
-FROM grafana/grafana:latest
+FROM r.planetary-quantum.com/docker-hub-proxy/grafana/grafana:10.1.5
 
 # install https://github.com/noqcks/gucci (CLI templating)
 USER root
