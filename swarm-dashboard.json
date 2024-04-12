@@ -1,9 +1,28 @@
 {
+  "__inputs": [],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "9.4.3"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
+  ],
   "annotations": {
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "${datasource}"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -12,17 +31,45 @@
       }
     ]
   },
-  "description": "A simple overview of the most important Docker host and Swarm metrics.",
+  "description": "An overview of the most important Docker host and Swarm metrics.",
   "editable": true,
   "gnetId": 893,
   "graphTooltip": 1,
   "id": 1,
   "iteration": 1624630311323,
-  "links": [],
+  "links": [
+    {
+      "icon": "external link",
+      "tags": [],
+      "targetBlank": true,
+      "title": "GitHub",
+      "type": "link",
+      "url": "https://github.com/hostwithquantum/grafana-stack"
+    },
+    {
+      "icon": "external link",
+      "tags": [],
+      "targetBlank": true,
+      "title": "Documentation",
+      "type": "link",
+      "url": "https://docs.planetary-quantum.com/"
+    },
+    {
+      "icon": "external link",
+      "tags": [],
+      "targetBlank": false,
+      "title": "Email Support",
+      "type": "link",
+      "url": "mailto:quantum-support@planetary-networks.de"
+    }
+  ],
   "panels": [
     {
       "collapsed": false,
-      "datasource": "Metrics",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -36,7 +83,10 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "Metrics",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -113,7 +163,10 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "Metrics",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -190,7 +243,10 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "Metrics",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -271,7 +327,10 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "Metrics",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -351,7 +410,10 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "Metrics",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -430,7 +492,10 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "Metrics",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -516,8 +581,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Metrics",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
@@ -625,8 +693,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Metrics",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
@@ -761,9 +832,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Metrics",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "decimals": 0,
-      "editable": true,
+      "editable": false,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
@@ -864,8 +938,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Metrics",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
@@ -972,8 +1049,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Metrics",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
@@ -1197,8 +1277,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Metrics",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
@@ -1304,8 +1387,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Metrics",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
@@ -1402,8 +1488,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Metrics",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
@@ -1502,8 +1591,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Metrics",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
+      "editable": false,
       "error": false,
       "fill": 5,
       "fillGradient": 0,
@@ -1601,8 +1693,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Metrics",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
+      "editable": false,
       "error": false,
       "fill": 3,
       "fillGradient": 0,
@@ -1700,8 +1795,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Metrics",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
+      "editable": false,
       "error": false,
       "fill": 3,
       "fillGradient": 0,
@@ -1795,7 +1893,10 @@
       }
     },
     {
-      "datasource": "Metrics",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "description": "The \"Count\" is not necessarily the number of restarts of that container. But containers appearing here without current deployments should probably be looked into.",
       "fieldConfig": {
         "defaults": {
@@ -1874,7 +1975,10 @@
       "pluginVersion": "8.4.4",
       "targets": [
         {
-          "datasource": "Metrics",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
           "exemplar": true,
           "expr": "count by (container_label_com_docker_swarm_service_name) ((time() - container_start_time_seconds{instance=\"$server\",container_label_com_docker_swarm_service_name=~\".+\"}) < 5*60)",
           "format": "time_series",
@@ -1888,7 +1992,7 @@
       ],
       "title": "Services started",
       "type": "timeseries"
-     }
+    }
   ],
   "refresh": "",
   "schemaVersion": 30,
@@ -1897,13 +2001,30 @@
   "templating": {
     "list": [
       {
+        "current": {
+          "text": "default",
+          "value": "default"
+        },
+        "hide": 0,
+        "label": "Data source",
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
         "allValue": ".+",
         "current": {
           "selected": false,
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "Metrics",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${datasource}"
+        },
         "definition": "",
         "description": null,
         "error": null,
@@ -1935,7 +2056,10 @@
           "text": "5m",
           "value": "5m"
         },
-        "datasource": "Metrics",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${datasource}"
+        },
         "description": null,
         "error": null,
         "hide": 0,
@@ -1963,7 +2087,10 @@
           "text": "",
           "value": ""
         },
-        "datasource": "Metrics",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${datasource}"
+        },
         "definition": "label_values(node_boot_time_seconds, instance)",
         "description": null,
         "error": null,
@@ -2017,5 +2144,5 @@
   "timezone": "browser",
   "title": "Usage By Stack",
   "uid": "jDWFKjEMz",
-  "version": 7
+  "version": 8
 }
