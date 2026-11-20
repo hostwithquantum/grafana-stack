@@ -35,4 +35,21 @@ $ quantum-cli stack update --create --wait --stack "grafana-$QUANTUM_ENDPOINT"
   ![log label selection](img/log_labels.png)
 * you should now see your logs
 
-For metrics: go to Dashboards :point_right: Manage. There should be one pre-configured dashboard "Usage by Stack".
+For metrics: go to Dashboards. These dashboards are pre-configured:
+
+* "Nodes Overview": size and usage (CPU, RAM, disk) of each node, with links to the other two
+* "Usage By Stack": usage per node, stack and service
+* "Node Exporter Full": all details of a single node
+
+## Development
+
+The dashboards live in [dashboards](dashboards/). They are copies from our internal Grafana:
+
+* `swarm.json` keeps its `uid`, so existing links continue to work
+* `node-exporter.json` is [1860](https://grafana.com/grafana/dashboards/1860) with a patch: the host is selected by `instance`, not by `nodename`
+
+```
+$ make lint     # validate the dashboards
+$ make test     # build the image, start it, check the provisioning
+$ make run-dev  # http://localhost:3000 (admin/admin)
+```
